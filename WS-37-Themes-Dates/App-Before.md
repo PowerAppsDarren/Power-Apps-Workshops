@@ -6,7 +6,7 @@
 
 Microsoft has given us modern theming, but it still does not cut it. We need to extend it to make it more powerful.
 
-
+![image2.png](img02.png)
 
 ---
 
@@ -25,4 +25,4 @@ This approach focuses only on the workweek because communication should occur ex
 For January 2025, the first day is a Wednesday (1st Jan). So, the first week would be Wednesday (1st) to Friday (3rd).
 The next week would start on Monday (6th) and end on Friday (10th), and so on.
 
-![image.png](image.png)
+![image1.png](img01.png)
