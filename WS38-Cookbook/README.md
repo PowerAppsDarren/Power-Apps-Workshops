@@ -11,12 +11,85 @@ This repository contains the code for the WS38 Cookbook project.
     - [Power-Apps-Workshops](https://github.com/PowerAppsDarren/Power-Apps-Workshops)
 
 - **Q: How do we update the files in VS Code, once we downloaded Git Desktop?**
-
+    - Forks
+    - Branches in Git 
+    - Pull request 
 
 ## Configuring Complex Menus
 
+- How to manipulate the menu  
+- Different ways utilize the menu based on all the rich properties in the menu items collection
 
+### Sample Menu Items
 
+```PowerFx
+//
+// This is the collection used for any of the the menus used
+//
+fxMenuItems = Sort(
+    AddColumns(
+        [
+            {
+                AsciiIcon: "🏠", 
+                ScreenToGoTo: 'Home Screen',
+                MenuText: Substitute(
+                    Upper('Home Screen'.Name), 
+                    " SCREEN", 
+                    ""
+                ),
+                ParentScreenName: "",
+                ImageOrIcon: "Icon",
+                MenuImage: SampleImage,
+                MenuIcon: Icon.Home,
+                ShowForThisRole: "User;",
+                Visible: true,
+                LaunchLink: false,
+                LaunchURL: "", 
+                SortOrder: 1
+            },
+            {
+                AsciiIcon: "🎯", 
+                ScreenToGoTo: 'TMPL - MAIN SCREEN',
+                MenuText: Substitute(
+                    Upper('TMPL - MAIN SCREEN'.Name), 
+                    " SCREEN", 
+                    ""
+                ),
+                ParentScreenName: "",
+                ImageOrIcon: "Icon",
+                MenuImage: SampleImage,
+                MenuIcon: Icon.Airplane,
+                ShowForThisRole: "User;",
+                Visible: true,
+                LaunchLink: false,
+                LaunchURL: "", 
+                SortOrder: 2
+            },
+            {
+                AsciiIcon: "⭐", 
+                ScreenToGoTo: 'Another Screen',
+                MenuText: Substitute(
+                    Upper('Another Screen'.Name), 
+                    " SCREEN", 
+                    ""
+                ),
+                ParentScreenName: "",
+                ImageOrIcon: "Icon",
+                MenuImage: SampleImage,
+                MenuIcon: Icon.Bookmark,
+                ShowForThisRole: "User;",
+                Visible: true,
+                LaunchLink: false,
+                LaunchURL: "", 
+                SortOrder: 3
+            }
+        ], 
+        MenuTextWithEmoji, 
+        AsciiIcon & " " & MenuText
+    ), 
+    SortOrder
+);
+```
 
 ## Installing & Configuring an on premise data gateway
 
