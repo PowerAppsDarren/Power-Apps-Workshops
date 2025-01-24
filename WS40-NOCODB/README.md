@@ -23,11 +23,17 @@ graph TD
 
 ## NOCODB Links & Resources
 
+>https://railway.com?referralCode=GUiqeH
+
 - https://nocodb.com/
 - https://docs.nocodb.com/
 - https://data-apis-v2.nocodb.com/
 - https://meta-apis-v2.nocodb.com/
 - https://app.nocodb.com/
+- https://github.com/nocodb/nocodb
+
+- Host: "app.nocodb.com"
+- BasePath: "/api/v2"
 
 - https://powerappers.up.railway.app
 
