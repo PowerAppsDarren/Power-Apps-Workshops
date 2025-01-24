@@ -36,6 +36,9 @@ graph TD
 
 ---
 
+- Host: powerappers.up.railway.app
+- BasePath: "/api/v2"
+
 - https://powerappers.up.railway.app
 
 >https://railway.com?referralCode=GUiqeH
