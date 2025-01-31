@@ -146,5 +146,12 @@ This is simply a listing of fields at the top of the 2nd sheet.
 
 # Sheet 6 - WEEKLY WORK PLAN (KANBAN)
 
+![06.png](./images/06.png)
 
+# Sheet 7 - MONTHLY WORK PLAN (CALENDAR)
 
+![07.png](./images/07.png)
+
+# Sheet 8 - DASHBOARD
+
+![08.png](./images/08.png)
