@@ -58,26 +58,27 @@
 How to extract ALL the requirements from clients/customers
 How to break down and unpack the requirements
 Identify core elements of the requirements
-👉 Database Tables
-👉 Relationships
-👉 Workflows
-👉 Automations
-👉 Reports
+
+- 👉 Database Tables
+- 👉 Relationships
+- 👉 Workflows
+- 👉 Automations
+- 👉 Reports
 Create a Design that creates a profound effect in the clients / customers / boss
-👉 Database Diagram
-👉 Wireframes / Mockups
-👉 User Stories
+- 👉 Database Diagram
+- 👉 Wireframes / Mockups
+- 👉 User Stories
 Identify an MVP (minimal viable product)
-👉 What is the smallest feature (this could be the the initial data entry screen and that's it)
-👉 Deliver on this small MVP within an afternoon or 1 to 3 days, fostering trust in you from them.
+- 👉 What is the smallest feature (this could be the the initial data entry screen and that's it)
+- 👉 Deliver on this small MVP within an afternoon or 1 to 3 days, fostering trust in you from them.
 Work up a formal proposal which includes the requirements, the phases (what's coming after the MVP,), the design, the proposed cost and time estimates.
 Verify with the client / customer that everything has been included and accounted for
 Keep in mind that without exceptions every project includes unforseen or unexpressed requirements and changes.
 Calculate time / cost estimates taking all line items in your proposal.
-👉 Figuring out an hourly rate is rarely a problem, but at least have this in mind
-👉 For each line item give your best estimate of how many days it will take to implement.
-👉 Double your time estimate for flat rate projects (you need a margin here that will account for some scope creep and other unforeseen circumstances).
-👉 Add up all the hours for all line items in your proposal draft. If you are creating a cost estimate, multiply that sum by your hourly rate.
+- 👉 Figuring out an hourly rate is rarely a problem, but at least have this in mind
+- 👉 For each line item give your best estimate of how many days it will take to implement.
+- 👉 Double your time estimate for flat rate projects (you need a margin here that will account for some scope creep and other unforeseen circumstances).
+- 👉 Add up all the hours for all line items in your proposal draft. If you are creating a cost estimate, multiply that sum by your hourly rate.
 When asking for $20,000 or more, be sure to make your proposal document look like a million bucks!
 
 
