@@ -8,7 +8,7 @@ Client Info:
 
 1. Word document pasted below. 
 2. [Excel Document - Data](02-Clean.xlsx)
-3. [coming soon](03-Clean.xlsx)
+3. Excel Document #3 (displayed in screen shots at the bottom of this page)
 
 --- 
 
