@@ -95,3 +95,12 @@ If you have any other suggestions or inquires, please feel free to contact me. t
 21.	Forecast dashboard should take average last year's tasks vs. capacity to estimate the next year capacity. 
 22.	The Actual Task time spent is the total time spent on the task = the engineer actual time + reviewer actual time.
 23.	The estimated Time to complete a task is the Time from assigning the task to the Time the task is marked "complete".  
+
+---
+
+# Excel Document #3
+
+## Sheet 1
+
+![01.png](./images/01.png)
+![01b.png](./images/01b.png)
