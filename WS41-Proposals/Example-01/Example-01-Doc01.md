@@ -7,8 +7,8 @@ Client Info:
 # Documents
 
 1. Word document pasted below. 
-2. [[02-Clean.xlsx]]
-3. [[03-Example-01-Doc03.md]]
+2. [Excel Document - Data](02-Clean.xlsx)
+3. [coming soon](03-Clean.xlsx)
 
 --- 
 
