@@ -85,8 +85,18 @@ When asking for $20,000 or more, be sure to make your proposal document look lik
 2. **PORTFOLIO**:  Add your designs and screenshots to your growing portfolio, which will be worth its weight in gold.
 3. **Code or Work Products**: MSAPP & Solutions Packages
 
-
-
+---
 
 Register now! Today 1pm to 5pm EST:
 https://whop.com/hub/biz_x0S3hEowv8RgHW/exp_nnGvxZbQdIx43o/app?eventId=evt_fVJgcNaEvX5p2V
+
+---
+
+## Role Model: Marcus Lemonis
+
+- https://www.google.com/search?&q=marcus+lemonis
+- "My first offer is always my best offer"
+
+## Other Resources
+
+- https://www.blackswanltd.com/negotiation-leadership-resources?type=guides
