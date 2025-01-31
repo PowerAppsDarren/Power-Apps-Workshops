@@ -106,4 +106,28 @@ If you have any other suggestions or inquires, please feel free to contact me. t
 ![01b.png](./images/01b.png)
 ![01c.png](./images/01c.png)
 
-#
+# Sheet 2
+
+This is simply a listing of fields at the top of the 2nd sheet. 
+
+- S. Notification	
+- Project	DRSS/DTH	
+- SO	
+- Description	
+- Equipment Type	
+- Serial No.	
+- SOW	
+- OWNER	
+- START DATE	
+- ETC	
+- REMARK	
+- Assigned Engineer	
+- Estemated Time	
+- Assigned Reviewer	
+- Estemated Review Time	
+- Actual Review Time	
+- Priority	
+- Status	
+- Engineer Comments
+
+![02.png](./images/02.png)
