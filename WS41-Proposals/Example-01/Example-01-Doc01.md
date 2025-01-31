@@ -132,14 +132,19 @@ This is simply a listing of fields at the top of the 2nd sheet.
 
 ![02.png](./images/02.png)
 
-# Sheet 3
+# Sheet 3 EMPTY
 
 ![03.png](./images/03.png)
 
-# Sheet 4
+# Sheet 4 SETTINGS
 
 ![04.png](./images/04.png)
 
-# Sheet 5
+# Sheet 5 - TASKS
 
-![04.png](./images/04.png)
+![05.png](./images/05.png)
+
+# Sheet 6 - WEEKLY WORK PLAN (KANBAN)
+
+
+
