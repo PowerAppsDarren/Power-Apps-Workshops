@@ -155,3 +155,10 @@ This is simply a listing of fields at the top of the 2nd sheet.
 # Sheet 8 - DASHBOARD
 
 ![08.png](./images/08.png)
+
+# Sheet 9 - DASHBOARD (DARK-MODE)
+
+![09.png](./images/09.png)
+
+# Sheet 10 - LISTS
+
