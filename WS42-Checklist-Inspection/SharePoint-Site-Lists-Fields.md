@@ -1,6 +1,7 @@
 # Full Project Schema 
 
 ## Car
+
 - Year
 - Make
 - Model
@@ -11,6 +12,7 @@
 - CustomerID
 
 ## Customer
+
 - FirstName
 - LastName
 - Phone
@@ -18,6 +20,7 @@
 - Email
 
 ## Inspection
+
 - CarID
 - StaffInspectorID
 - CustomerID
@@ -27,6 +30,7 @@
 - Completed
 
 ## Staff (AppUser)
+
 - IsManager
 - UserEmail (M365)
 - AlternateEmail
@@ -46,15 +50,18 @@
 - ManagerEntraID
 
 ## QuestionCategory
+
 - SortOrder
 
 ## Question
+
 - CategoryName
 - SortOrder
 - CategorySortOrder
 - FullQuestionText
 
 ## Answer
+
 -  QuestionID
 -  Category
 -  QuestionText
