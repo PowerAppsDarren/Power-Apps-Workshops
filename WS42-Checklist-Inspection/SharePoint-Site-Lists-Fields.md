@@ -3,24 +3,21 @@
 
 ## Table of Contents
 
-- [Question](#question)
-- [QuestionCategory](#questioncategory)
-- [Answer](#answer)
-- [Inspection](#inspection)
-- [Car](#car)
-- [Customer](#customer)
+
+- [Answer](#answer)  
+- [AppPreference](#apppreference)  
+- [Application](#application)  
+- [AppSetting](#appsetting)  
+- [AppUser](#appuser)  
+- [AppUserPreference](#appuserpreference)  
+- [AppUserRole](#appuserrole)  
+- [Car](#car)  
+- [Customer](#customer)  
+- [Inspection](#inspection)  
+- [Question](#question)  
+- [QuestionCategory](#questioncategory)  
 - [Staff](#staff)
-- [AppUser](#appuser)
-- [AppPreference](#apppreference)
-- [AppUserPreference](#appuserpreference)
-- [AppSetting](#appsetting)
-- [AppSetting](#appsetting)
-- [Application](#application)
-- [AppUserRole](#appuserrole)
 
-
-
----
 
 ## Question
 
@@ -42,6 +39,7 @@ Below is the inferred SharePoint schema for the **Question** table based on the 
   - `CategoryName` (to optimize filtering or searching by category).
   - `SortOrder` (to optimize sorting operations).
 
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## QuestionCategory
 
@@ -61,6 +59,7 @@ Below is the inferred SharePoint schema for the **QuestionCategory** table based
   - `Title` (to optimize searches by category name).
   - `SortOrder` (to optimize sorting operations).
 
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## Answer
 
@@ -85,6 +84,7 @@ Below is the inferred SharePoint schema for the **Answer** table based on the ER
 - **Search Indexes**:
   - `Category` (if filtering or searching by category is frequent).
 
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## Inspection
 
@@ -110,6 +110,7 @@ Below is the inferred SharePoint schema for the **Inspection** table based on th
   - `ManagerID` (to optimize joins with manager-related queries).
 - **Search Index**: `InspectionType` (if filtering or searching by inspection type is frequent).
 
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## Car
 
@@ -135,6 +136,8 @@ Below is the inferred SharePoint schema for the **Car** table based on the ERD d
   - `VIN` (to quickly locate cars by their unique VIN).
   - `Tag` (to optimize searches by license plate/tag number).
 
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
+
 ## Customer
 
 Below is the inferred SharePoint schema for the **Customer** table based on the ERD diagram.
@@ -155,6 +158,7 @@ Below is the inferred SharePoint schema for the **Customer** table based on the 
   - `Email` (to optimize searches by email address).
   - `LastName` (to speed up queries involving customer names). 
 
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## Staff
 
@@ -170,6 +174,7 @@ Below is the inferred SharePoint schema for the **Staff** table based on the ERD
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Search Index**: `IsManager` (to optimize queries filtering by managerial status).
 
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## AppUser
 
@@ -204,9 +209,7 @@ Below is the inferred SharePoint schema for the **AppUser** table, focusing on t
   - `ManagerEmail` (to optimize queries involving managers).
   - `Department` (to optimize filtering by department).
 
-
-
-
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## AppPreference
 
@@ -225,6 +228,7 @@ Below is the inferred SharePoint schema for the **AppPreference** table based on
   - `Title` (to optimize searches by preference name).
   - `SortOrder` (to optimize sorting operations).
 
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## AppUserPreference
 
@@ -245,6 +249,7 @@ Below is the inferred SharePoint schema for the **AppUserPreference** table base
   - `AppPreferenceID` (to optimize joins with the AppPreference table).
   - `AppID` (to optimize joins with the Application table).
 
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## AppSetting
 
@@ -265,7 +270,7 @@ Below is the inferred SharePoint schema for the **AppSetting** table based on th
   - `Title` (to optimize searches by setting name).
   - `SortOrder` (to optimize sorting operations).
 
-
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## AppSetting
 
@@ -286,7 +291,7 @@ Below is the inferred SharePoint schema for the **AppSetting** table based on th
   - `Title` (to optimize searches by setting name).
   - `SortOrder` (to optimize sorting operations).
 
-
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## Application
 
@@ -306,7 +311,7 @@ Below is the inferred SharePoint schema for the **Application** table based on t
   - `TenantGUID` (to optimize searches by tenant).
   - `EnvironmentGUID` (to optimize searches by environment).
 
-
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
 
 ## AppUserRole
 
@@ -329,5 +334,4 @@ Below is the inferred SharePoint schema for the **AppUserRole** table based on t
   - `AppName` (to optimize searches by application name).
   - `AppRoleName` (to optimize searches by role name).
 
-
-
+<br>[⬆️ Back to Top ⬆️](#full-project-schema)<br><br>
