@@ -16,3 +16,4 @@ Playlist:
 ERD Diagrams:
 - https://drawsql.app/teams/neeseus/diagrams/checklist-inspection-app
 - https://drawsql.app/teams/neeseus/diagrams/org-chart-profile-data
+- [Updated ERD](https://drawsql.app/teams/neeseus/diagrams/checklist-inspection-app-ws42)
