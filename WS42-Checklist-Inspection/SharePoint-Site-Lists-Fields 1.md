@@ -1,28 +1,95 @@
 # Full Project Schema 
 
 
-## Table of Contents
-
-- [Question](#question)
-- [QuestionCategory](#questioncategory)
-- [Answer](#answer)
-- [Inspection](#inspection)
-- [Car](#car)
-- [Customer](#customer)
-- [Staff](#staff)
-- [AppUser](#appuser)
-- [AppPreference](#apppreference)
-- [AppUserPreference](#appuserpreference)
-- [AppSetting](#appsetting)
-- [AppSetting](#appsetting)
-- [Application](#application)
-- [AppUserRole](#appuserrole)
+- [x] Question
+- [x] QuestionCategory
+- [x] Answer
+- [x] Inspection
+- [x] Car
+- [x] Customer
+- [x] Staff
+- [x] AppUser
+- [x] AppPreference
+- [x] AppUserPreference
+- [x] AppSetting
+- [x] Application
+- [x] AppRole
+- [x] AppUserRole
 
 
+## Car
 
----
+- Year
+- Make
+- Model
+- Color
+- Tag
+- VIN
+- Notes
+- CustomerID
+
+## Customer
+
+- FirstName
+- LastName
+- Phone
+- Notes
+- Email
+
+## Inspection
+
+- CarID
+- StaffInspectorID
+- CustomerID
+- InspectionType
+- ManagerID
+- Notes
+- Completed
+
+## Staff (AppUser)
+
+- IsManager
+- UserEmail (M365)
+- AlternateEmail
+- FirstName
+- LastName
+- EntraID
+- EmployeeID
+- Image
+- HRNotes
+- ITNotes
+- PIN
+- OfficeLocation
+- Department
+- DepartmentID
+- JobTitle
+- ManagerEmail
+- ManagerEntraID
+
+## QuestionCategory
+
+- SortOrder
 
 ## Question
+
+- CategoryName
+- SortOrder
+- CategorySortOrder
+- FullQuestionText
+
+## Answer
+
+-  QuestionID
+-  Category
+-  QuestionText
+-  InspectionID
+-  AnswerValue
+-  AnswerLong
+
+
+
+
+## Table: **Question**
 
 Below is the inferred SharePoint schema for the **Question** table based on the provided ERD diagram.
 
@@ -35,15 +102,8 @@ Below is the inferred SharePoint schema for the **Question** table based on the 
 | CategorySortOrder     | Numeric                   | 10                   | Yes                    | No                       | No                       | Sort order specific to the category.                                           | None              | Positive integer only         |
 | FullQuestionText      | Multi-Line Text           | Unlimited             | Yes                    | No                       | No                       | Full text of the question, providing additional details if needed.             | None              | None                          |
 
-###### Indexes
-- **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
-- **Search Indexes**:
-  - `Title` (to optimize searches by question title).
-  - `CategoryName` (to optimize filtering or searching by category).
-  - `SortOrder` (to optimize sorting operations).
 
-
-## QuestionCategory
+## Table: **QuestionCategory**
 
 Below is the inferred SharePoint schema for the **QuestionCategory** table based on the provided ERD diagram.
 
@@ -53,16 +113,7 @@ Below is the inferred SharePoint schema for the **QuestionCategory** table based
 | Title                 | Single Line of Text       | 255                  | No                     | No                       | No                       | The name or title of the question category.                                     | None              | None                          |
 | SortOrder             | Numeric                   | 10                   | Yes                    | No                       | No                       | Order in which the category appears in lists or UI.                             | None              | Positive integer only         |
 
-
-###### Indexes
-
-- **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
-- **Search Indexes**:
-  - `Title` (to optimize searches by category name).
-  - `SortOrder` (to optimize sorting operations).
-
-
-## Answer
+## Table: **Answer**
 
 Below is the inferred SharePoint schema for the **Answer** table based on the ERD diagram.
 
@@ -76,17 +127,8 @@ Below is the inferred SharePoint schema for the **Answer** table based on the ER
 | AnswerValue           | Single Line of Text       | 255                  | Yes                    | No                       | No                       | Short text response or value for the answer.                                    | None              | None                          |
 | AnswerLong            | Multi-Line Text           | Unlimited             | Yes                    | No                       | No                       | Detailed or extended response for the answer.                                   | None              | None                          |
 
-###### Indexes
 
-- **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
-- **Foreign Key Indexes**:
-  - `QuestionID` (to optimize joins with the Question table).
-  - `InspectionID` (to optimize joins with the Inspection table).
-- **Search Indexes**:
-  - `Category` (if filtering or searching by category is frequent).
-
-
-## Inspection
+## Table: **Inspection**
 
 Below is the inferred SharePoint schema for the **Inspection** table based on the ERD diagram.
 
@@ -101,7 +143,7 @@ Below is the inferred SharePoint schema for the **Inspection** table based on th
 | Notes                 | Multi-Line Text           | Unlimited             | Yes                    | No                       | No                       | Additional notes or details about the inspection.                               | None              | None                          |
 | Completed             | Date Time                 | N/A                  | Yes                    | No                       | No                       | Date and time when the inspection was completed.                                | None              | None                          |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Foreign Key Indexes**:
   - `CarID` (to optimize joins with the Car table).
@@ -111,7 +153,7 @@ Below is the inferred SharePoint schema for the **Inspection** table based on th
 - **Search Index**: `InspectionType` (if filtering or searching by inspection type is frequent).
 
 
-## Car
+## Table: **Car**
 
 Below is the inferred SharePoint schema for the **Car** table based on the ERD diagram.
 
@@ -128,7 +170,7 @@ Below is the inferred SharePoint schema for the **Car** table based on the ERD d
 | Notes                 | Multi-Line Text           | Unlimited             | Yes                    | No                       | No                       | Additional notes or details about the car.                                      | None              | None                          |
 | CustomerID            | Numeric                   | 18                   | Yes                    | No                       | Yes                      | Foreign key referencing the customer associated with this car.                  | None              | Must match an existing Customer ID |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Foreign Key Index**: `CustomerID` (to optimize joins with the Customer table).
 - **Search Indexes**:
@@ -149,7 +191,7 @@ Below is the inferred SharePoint schema for the **Customer** table based on the 
 | Notes                 | Multi-Line Text           | Unlimited             | Yes                    | No                       | No                       | Additional notes or details about the customer.                                 | None              | None                          |
 | Email                 | Single Line of Text       | 255                  | Yes                    | No                       | No                       | Email address of the customer.                                                  | None              | Must be a valid email address |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Search Indexes**:
   - `Email` (to optimize searches by email address).
@@ -166,7 +208,7 @@ Below is the inferred SharePoint schema for the **Staff** table based on the ERD
 | Title                 | Single Line of Text       | 255                  | Yes                    | No                       | No                       | Title or position of the staff member.                                          | None              | None                          |
 | IsManager             | Yes/No                   | N/A                  | Yes                    | No                       | No                       | Indicates whether the staff member is a manager.                                | No                | None                          |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Search Index**: `IsManager` (to optimize queries filtering by managerial status).
 
@@ -195,7 +237,7 @@ Below is the inferred SharePoint schema for the **AppUser** table, focusing on t
 | ManagerEmail          | Single Line of Text       | 255                  | Yes                    | No                       | No                       | Email address of the user's manager.                                            | None              | Must be a valid email address |
 | PhotoBase64Length     | Numeric                   | 18                   | Yes                    | No                       | No                       | Length of the Base64-encoded photo string, if applicable.                       | None              | Must be positive integer      |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Search Indexes**:
   - `UserEmail` (to optimize searches by email).
@@ -219,7 +261,7 @@ Below is the inferred SharePoint schema for the **AppPreference** table based on
 | DataType              | Single Line of Text       | 255                  | Yes                    | No                       | No                       | Data type of the preference value (e.g., string, number).                       | None              | None                          |
 | SortOrder             | Numeric                   | 10                   | Yes                    | No                       | No                       | Order in which the preference appears in lists or UI.                           | None              | Positive integer only         |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Search Indexes**:
   - `Title` (to optimize searches by preference name).
@@ -238,7 +280,7 @@ Below is the inferred SharePoint schema for the **AppUserPreference** table base
 | Answer                | Multi-Line Text           | Unlimited             | Yes                    | No                       | No                       | User's answer or value for the specified preference.                            | None              | None                          |
 | AppID                 | Numeric                   | 18                   | Yes                    | No                       | Yes                      | Foreign key referencing the related application in the Application table.        | None              | Must match an existing Application ID |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Foreign Key Indexes**:
   - `AppUserID` (to optimize joins with the AppUser table).
@@ -258,7 +300,7 @@ Below is the inferred SharePoint schema for the **AppSetting** table based on th
 | SortOrder             | Numeric                   | 10                   | Yes                    | No                       | No                       | Order in which the setting appears in lists or UI.                              | None              | Positive integer only         |
 | AppID                 | Numeric                   | 18                   | Yes                    | No                       | Yes                      | Foreign key referencing the related application in the Application table.        | None              | Must match an existing Application ID |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Foreign Key Index**: `AppID` (to optimize joins with the Application table).
 - **Search Indexes**:
@@ -279,7 +321,7 @@ Below is the inferred SharePoint schema for the **AppSetting** table based on th
 | SortOrder             | Numeric                   | 10                   | Yes                    | No                       | No                       | Order in which the setting appears in lists or UI.                              | None              | Positive integer only         |
 | AppID                 | Numeric                   | 18                   | Yes                    | No                       | Yes                      | Foreign key referencing the related application in the Application table.        | None              | Must match an existing Application ID |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Foreign Key Index**: `AppID` (to optimize joins with the Application table).
 - **Search Indexes**:
@@ -300,7 +342,7 @@ Below is the inferred SharePoint schema for the **Application** table based on t
 | TenantGUID            | Single Line of Text       | 255                  | Yes                    | No                       | No                       | Globally unique identifier for the tenant associated with the application.      | None              | Must be unique                |
 | EnvironmentGUID       | Single Line of Text       | 255                  | Yes                    | No                       | No                       | Globally unique identifier for the environment associated with the application. | None              | Must be unique                |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Search Indexes**:
   - `TenantGUID` (to optimize searches by tenant).
@@ -320,7 +362,7 @@ Below is the inferred SharePoint schema for the **AppUserRole** table based on t
 | AppName               | Single Line of Text       | 255                  | Yes                    | No                       | No                       | Name of the application associated with this role.                              | None              | None                          |
 | AppRoleName           | Single Line of Text       | 255                  | Yes                    | No                       | No                       | Name or title of the role assigned to the user.                                 | None              | None                          |
 
-###### Indexes
+### Recommended Indexes
 - **Primary Key Index**: `ID` (to ensure uniqueness and fast lookups).
 - **Foreign Key Indexes**:
   - `AppUserID` (to optimize joins with the AppUser table).
