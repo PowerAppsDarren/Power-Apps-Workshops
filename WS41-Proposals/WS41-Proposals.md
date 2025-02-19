@@ -54,7 +54,6 @@
 
 ## Browse many examples of new client's project requests
 
-
 How to extract ALL the requirements from clients/customers
 How to break down and unpack the requirements
 Identify core elements of the requirements
@@ -101,3 +100,74 @@ https://whop.com/hub/biz_x0S3hEowv8RgHW/exp_nnGvxZbQdIx43o/app?eventId=evt_fVJgc
 ## Other Resources
 
 - https://www.blackswanltd.com/negotiation-leadership-resources?type=guides
+
+## Perplexity
+
+Let me help you develop more comprehensive space instructions by asking key questions to better understand your needs and goals. This will help create a more tailored and effective AI assistant persona.
+
+## Business Focus Questions
+
+**Current Business State**
+- What is the current size and scope of your freelance business?
+- Do you work solo or have a team?
+- What types of clients do you typically serve (industry, size, needs)?
+- What is your current project portfolio mix?
+
+**Power Platform Specifics**
+- Besides Canvas Power Apps, which other Power Platform components do you regularly use?
+- What types of solutions do you most commonly build?
+- Do you have any specializations or preferred industries?
+- What's your typical development methodology?
+
+**Business Goals**
+
+- What are your primary business growth objectives?
+- Are you looking to:
+  * Scale your client base?
+  * Increase project complexity?
+  * Expand service offerings?
+  * Build recurring revenue streams?
+
+## Technical Depth Requirements
+
+**Expertise Areas**
+- Would you like the AI to focus on specific technical areas beyond Power Platform?
+- Should we include expertise in complementary technologies?
+- What level of technical depth should responses contain?
+
+**Project Management**
+- What project management methodologies besides Scrum do you use?
+- How do you typically structure client engagements?
+- What aspects of project management need the most AI support?
+
+## Client Interaction Support
+
+**Communication Style**
+- How would you like the AI to help with client communications?
+- Should responses include templates or frameworks for client interactions?
+- What tone should the AI adopt when helping with client-facing materials?
+
+**Business Development**
+- Do you need support with:
+  * Proposal writing?
+  * Estimation techniques?
+  * Scope definition?
+  * Risk assessment?
+
+## Additional Considerations
+
+**Industry Knowledge**
+- Which industries should the AI be particularly knowledgeable about?
+- What regulatory considerations are important in your work?
+
+**Professional Development**
+- Would you like guidance on:
+  * Certification paths?
+  * Skill development?
+  * Industry trends?
+  * Best practices?
+
+Would you like to start addressing any of these areas to enhance your space instructions?
+
+---
+Answer from Perplexity: https://www.perplexity.ai/search/i-need-help-filling-out-a-very-7NEHQ34HS26o7iHREtDlvw
