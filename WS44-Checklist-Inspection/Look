@@ -1,0 +1,354 @@
+    # =======================================================================
+    CurrentItem     :Record
+    selectedRecord  :Record
+    isItemSelected  :Boolean
+    deleteMode      :Boolean
+    editMode        :Boolean
+    newMode         :Boolean
+    # =======================================================================
+
+
+
+Screens:
+  LOOK AT THIS:
+    Children:
+      - ScreenContainer6:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            Fill: =RGBA(245, 245, 245, 1)
+            Height: =Parent.Height
+            LayoutAlignItems: =LayoutAlignItems.Stretch
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            PaddingBottom: =16
+            PaddingLeft: =16
+            PaddingRight: =16
+            PaddingTop: =16
+            Width: =Parent.Width
+          Children:
+            - HeaderContainer6:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =App.Theme.Colors.Primary
+                  FillPortions: =0
+                  Height: =68
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =5
+                  PaddingRight: =6
+                Children:
+                  - Header6:
+                      Control: Header@0.0.42
+            - BodyContainer2:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =16
+                  PaddingBottom: =2
+                  PaddingTop: =4
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - SidebarContainer3:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =If(And('LOOK AT THIS'.Size = ScreenSize.Small, Or(newMode, isItemSelected)), 0, 3)
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =10
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        Visible: =If(And('LOOK AT THIS'.Size = ScreenSize.Small, Or(newMode, isItemSelected)), false, true)
+                      Children:
+                        - SearchContainer1:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(245, 245, 245, 1)
+                              FillPortions: =0
+                              Height: =44
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              PaddingRight: =5
+                            Children:
+                              - SearchInput1:
+                                  Control: TextInput@0.0.53
+                                  Properties:
+                                    FillPortions: =1
+                                    Height: =44
+                                    Placeholder: ="Search"
+                        - AddNewContainer2:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =44
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Visible: =If('LOOK AT THIS'.Size = ScreenSize.Small,true,false)
+                            Children:
+                              - AddNewButton2:
+                                  Control: Button@0.0.44
+                                  Properties:
+                                    Align: =Align.Left
+                                    AlignInContainer: =AlignInContainer.Stretch
+                                    Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                    FillPortions: =1
+                                    FontSize: =14
+                                    Height: =44
+                                    Icon: ="Add"
+                                    LayoutMinWidth: =60
+                                    OnSelect: |-
+                                      =NewForm(Form1); UpdateContext({ newMode: true })
+                                    Text: ="New"
+                                    VerticalAlign: =VerticalAlign.Middle
+                                    Width: =80
+                        - Table2:
+                            Control: Table@1.0.262
+                            Properties:
+                              AlignInContainer: =AlignInContainer.Start
+                              EnableRangeSelection: ='PowerAppsOneGrid.EnableRangeSelection'.Enable
+                              EnableSorting: ='PowerAppsOneGrid.EnableSorting'.Enable
+                              FillPortions: =1
+                              Items: =Table()
+                              OnSelect: |-
+                                =UpdateContext({ isItemSelected: true, newMode: false, CurrentItem:Table2.Selected })
+                              ReflowBehavior: ='PowerAppsOneGrid.ReflowBehavior'.ListOnly
+                  - DeleteConfirmDialogContainer2:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        FillPortions: =7
+                        LayoutDirection: =LayoutDirection.Vertical
+                        Visible: =If(deleteMode, true, false)
+                        Width: =0
+                      Children:
+                        - ConfirmDeleteLabelContainer2:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              LayoutAlignItems: =LayoutAlignItems.End
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              PaddingBottom: =20
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - TextCanvas7:
+                                  Control: Text@0.0.50
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Center
+                                    FillPortions: =1
+                                    Size: =16
+                                    Text: ="Are you sure you want to delete this record?"
+                        - ConfirmDeleteButtonBarContainer2:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =15
+                              LayoutJustifyContent: =LayoutJustifyContent.Center
+                              LayoutWrap: =true
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - ConfirmDeleteButton2:
+                                  Control: Button@0.0.44
+                                  Properties:
+                                    AccessibleLabel: ="Delete"
+                                    OnSelect: |
+                                      =Remove(
+                                          Table(),
+                                          selectedRecord
+                                      );
+                                      If(
+                                          IsEmpty(
+                                              Errors(
+                                                  Table(),
+                                                  selectedRecord
+                                              )
+                                          ),
+                                          UpdateContext(
+                                              {
+                                                  CurrentItem: First(Table()),
+                                                  isItemSelected: false,
+                                                  newMode: false,
+                                                  deleteMode: false
+                                              }
+                                          )
+                                      );
+                                    Text: ="Delete"
+                              - CancelDeleteButton2:
+                                  Control: Button@0.0.44
+                                  Properties:
+                                    AccessibleLabel: ="Cancel"
+                                    Appearance: ='ButtonCanvas.Appearance'.Secondary
+                                    OnSelect: |-
+                                      =UpdateContext({ deleteMode: false })
+                                    Text: ="Cancel"
+                  - RightContainer2:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =7
+                        LayoutAlignItems: =LayoutAlignItems.Stretch
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =16
+                        PaddingBottom: =2
+                        PaddingLeft: =2
+                        PaddingRight: =2
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Visible: =If(Or(deleteMode, And('LOOK AT THIS'.Size = ScreenSize.Small, !newMode, !isItemSelected)), false, true)
+                        Width: =0
+                      Children:
+                        - Container12:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =60
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =40
+                            Children:
+                              - Container23:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =60
+                                    PaddingLeft: =If('LOOK AT THIS'.Size = ScreenSize.Small,8,12)
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                  Children:
+                                    - BackIcon2:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Center
+                                          Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                          Icon: ="ArrowLeft"
+                                          Layout: ='ButtonCanvas.Layout'.IconBefore
+                                          OnSelect: |-
+                                            =ResetForm(Form1); UpdateContext({ newMode: false, editMode: false, CurrentItem: First(Table2.SelectedItems), isItemSelected:false });
+                                          Text: ="Back"
+                                          Visible: =If(And('LOOK AT THIS'.Size = ScreenSize.Small, !deleteMode), true, false)
+                                          Width: =If('LOOK AT THIS'.Size = ScreenSize.Small, 75, 96)
+                                    - NewRecordButton2:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Center
+                                          Appearance: ='ButtonCanvas.Appearance'.Primary
+                                          Icon: ="Add"
+                                          OnSelect: |-
+                                            =NewForm(Form1); UpdateContext({ newMode: true })
+                                          Text: ="New"
+                                          Visible: =If('LOOK AT THIS'.Size = ScreenSize.Small, false, And(!newMode, !deleteMode))
+                                          Width: =If('LOOK AT THIS'.Size = ScreenSize.Small, 75, 96)
+                                    - EditButton2:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Center
+                                          Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                          Icon: ="Edit"
+                                          OnSelect: |-
+                                            =UpdateContext({ editMode: true, selectedRecord: Table2.Selected })
+                                          Text: ="Edit"
+                                          Visible: =And(!newMode, !deleteMode)
+                                          Width: =If('LOOK AT THIS'.Size = ScreenSize.Small, 75, 90)
+                                    - DeleteButton2:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Center
+                                          Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                          Icon: ="Delete"
+                                          OnSelect: |-
+                                            =UpdateContext({ deleteMode: true, selectedRecord: Table2.Selected })
+                                          Text: ="Delete"
+                                          Visible: =And(!newMode, !deleteMode)
+                                          Width: =If('LOOK AT THIS'.Size = ScreenSize.Small, 75, 70)
+                        - MainContainer6:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              Fill: =RGBA(255, 255, 255, 1)
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =16
+                              LayoutMinHeight: =150
+                              LayoutMinWidth: =300
+                              LayoutOverflowY: =LayoutOverflow.Scroll
+                              PaddingTop: =8
+                            Children:
+                              - Form1:
+                                  Control: Form@2.4.2
+                                  Layout: Vertical
+                                  Properties:
+                                    BorderStyle: =BorderStyle.None
+                                    DataSource: =Table()
+                                    DefaultMode: =If(newMode, FormMode.New, editMode, FormMode.Edit, FormMode.View)
+                                    FillPortions: =0.85
+                                    Item: =CurrentItem
+                                    LayoutMinHeight: =100
+                                    LayoutMinWidth: =300
+                                    OnFailure: =Notify("Cannot save. Please check if there are errors in the form.", NotificationType.Error)
+                                    OnSuccess: |
+                                      =UpdateContext({ CurrentItem: Self.LastSubmit, isItemSelected: false});Notify("Success",NotificationType.Success);ResetForm(Form1)
+                                    Width: =Parent.Width
+                              - ButtonContainer3:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0.15
+                                    Height: =Parent.Height
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutGap: =10
+                                    LayoutJustifyContent: =LayoutJustifyContent.End
+                                    LayoutMinHeight: =50
+                                    LayoutOverflowY: =LayoutOverflow.Scroll
+                                    PaddingRight: =24
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                  Children:
+                                    - CancelButton2:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          Appearance: ='ButtonCanvas.Appearance'.Secondary
+                                          OnSelect: |-
+                                            =ResetForm(Form1); UpdateContext({ newMode: false, editMode: false, CurrentItem: First(Table2.SelectedItems), isItemSelected:false });
+                                          Text: ="Cancel"
+                                    - SubmitButton3:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          Appearance: ='ButtonCanvas.Appearance'.Primary
+                                          OnSelect: =SubmitForm(Form1)
+                                          Text: ="Submit"
+
+

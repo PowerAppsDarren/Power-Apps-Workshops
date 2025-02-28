@@ -17,7 +17,7 @@ Every readme file for each workshop should have the following sections:
 
 ## Listing of Workshops
 
-- **Workshop #45** - Checklist Inspection - Part 4
+- **Workshop #45** - Checklist Inspection - Part 4 (next week???)
 - **Workshop #44** - Checklist Inspection - Part 3
 - **Workshop #43** - Checklist Inspection - Part 2
 - **Workshop #42** - Checklist Inspection - Part 1

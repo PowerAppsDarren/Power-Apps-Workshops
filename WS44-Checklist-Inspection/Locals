@@ -1,0 +1,143 @@
+
+# =======================================================================
+#
+#
+#
+# =======================================================================
+# LOOK AT THIS SCREEN
+
+    # =======================================================================
+    CurrentItem     :Record
+
+            GALLERY.SELECTED
+            First(Table())
+
+    selectedRecord  :Record
+
+    
+
+    isItemSelected  :Boolean
+
+    deleteMode      :Boolean
+
+    editMode        :Boolean
+
+    newMode         :Boolean
+
+
+    # =======================================================================
+
+# =======================================================================
+#
+#   CurrentItem     
+#   newMode         
+#   editMode
+#   isItemSelected
+#
+# =======================================================================
+BackIcon
+    ResetForm(Form1);       <--- Reset the form
+    UpdateContext(
+        { 
+            newMode: false, 
+            editMode: false, 
+            CurrentItem: First(GALLERY__CONTROL.SelectedItems), 
+            isItemSelected:false 
+        }
+    );
+
+# =======================================================================
+#
+#
+#
+# =======================================================================
+CancelButton
+    ResetForm(Form1);       <--- Reset the form
+    UpdateContext(
+        { 
+            newMode: false, 
+            editMode: false, 
+            CurrentItem: First(Table2.SelectedItems), 
+            isItemSelected:false 
+        }
+    );
+
+# =======================================================================
+#
+#   - selectedRecord
+#   - deleteMode    
+#   - CurrentItem
+#   - isItemSelected
+#   - newMode
+#
+# =======================================================================
+ConfirmDelete
+    Remove(
+        Table(),
+        selectedRecord
+    );
+    If(
+        IsEmpty(
+            Errors(
+                Table(),
+                selectedRecord
+            )
+        ),
+        UpdateContext(
+            {
+                CurrentItem: First(Table()),
+                isItemSelected: false,
+                newMode: false,
+                deleteMode: false
+            }
+        )
+    );
+
+    
+# =======================================================================
+#
+#   isItemSelected
+#
+# =======================================================================
+Gallery.OnSelect
+    UpdateContext(
+        { 
+            isItemSelected: true, 
+            newMode: false, 
+            CurrentItem:Table2.Selected 
+        }
+    );
+
+# =======================================================================
+#
+#   CurrentItem
+#   isItemSelected
+#
+# =======================================================================
+Form.OnSuccess()
+    UpdateContext(
+        { 
+            CurrentItem: Self.LastSubmit, 
+            isItemSelected: false
+        }
+    );
+    Notify(
+        "Success",
+        NotificationType.Success
+    );
+    ResetForm(Form1)
+
+
+# =======================================================================
+#
+#   deleteMode
+#   selectedRecord
+#
+# =======================================================================
+DeleteButton2.OnSelect 
+UpdateContext(
+    { 
+        deleteMode: true, 
+        selectedRecord: Table2.Selected 
+    }
+)
