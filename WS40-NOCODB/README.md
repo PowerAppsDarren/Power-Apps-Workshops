@@ -10,39 +10,12 @@ NocoDB is an open-source, no-code platform that simplifies database management a
 
 Overall, NocoDB empowers users to streamline their workflows and increase productivity while maintaining control over their data.
 
-## Key Functionalities Diagram
-
-```mermaid
-graph TD
-    A[NocoDB] --> B[No-Code Development]
-    A --> C[Real-Time Collaboration]
-    A --> D[Role-Based Access Control]
-    A --> E[Automated Workflows]
-    A --> F[Scalability]
-```
-
 ## NOCODB Links & Resources
 
+- https://nocodb.com/
+- https://data-apis-v2.nocodb.com/
+- https://meta-apis-v2.nocodb.com/
+- https://app.nocodb.com/
 
-- https://nocodb.com
-- https://docs.nocodb.com
-- https://data-apis-v2.nocodb.com
-- https://meta-apis-v2.nocodb.com
-- https://app.nocodb.com
-- https://github.com/nocodb/nocodb
-
-- Host: "app.nocodb.com"
-- BasePath: "/api/v2"
-
----
-
-- Host: powerappers.up.railway.app
-- BasePath: "/api/v2"
 
 - https://powerappers.up.railway.app
-
->https://railway.com?referralCode=GUiqeH
-
-![[gra_NOCODB_LOGO.png]]
-
-#1c27bd
