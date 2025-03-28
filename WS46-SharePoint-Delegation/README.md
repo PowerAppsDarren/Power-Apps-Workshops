@@ -1,5 +1,7 @@
 # WS46-SharePoint-Delegation
 
 
+Links to have handy: 
 
-https://workflowy.com/s/overcoming-sharepoin/oj3HlqfssB6mYOo6
+- [Workflowy Notes](https://workflowy.com/s/overcoming-sharepoin/oj3HlqfssB6mYOo6)
+- [Workshop GitHub Repo](https://github.com/PowerAppsDarren/Power-Apps-Workshops/tree/main/WS46-SharePoint-Delegation)
