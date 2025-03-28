@@ -9,5 +9,4 @@ Links to have handy:
 
 ## File Downloads
 
-- [2025-03-28-03-15-Workshop - SharePoint Delegation.msapp](2025-03-28-01-00-Workshop - SharePoint Delegation.msapp)
-- [2025-03-28-01-00-Workshop - SharePoint Delegation.msapp](assets/2025-03-28-01-00-Workshop - SharePoint Delegation.msapp)
+All downloads [can be found here](https://github.com/PowerAppsDarren/Power-Apps-Workshops/tree/main/WS46-SharePoint-Delegation/assets)
